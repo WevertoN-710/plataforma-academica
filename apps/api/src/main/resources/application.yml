@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: plataforma
+  modulith:
+    events:
+      jdbc-schema-initialization:
+        enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/plataforma
+    username: plataforma
+    password: dev
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  session:
+    jdbc:
+      initialize-schema: always
+  mail:
+    host: localhost
+    port: 1025
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
